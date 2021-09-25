@@ -17,7 +17,10 @@ func uploadData(requestJson []byte, url string, apiKey string) {
 	if err != nil {
 		panic(err)
 	}
-	req.Header.Add("X-API-KEY", apiKey)
+
+	if apiKey != "" {
+		req.Header.Add("X-API-KEY", apiKey)
+	}
 	req.Header.Add("Content-Type", "application/json")
 
 	client := http.Client{Timeout: time.Duration(1) * time.Second}
