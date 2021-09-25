@@ -1,4 +1,4 @@
-module app
+module github.com/trivelt/payment-records-processor
 
 go 1.16
 
