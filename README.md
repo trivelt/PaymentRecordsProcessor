@@ -3,6 +3,17 @@
 Application for simple processing of payment records. It fetches CSV data from the network, performs some 
 transformations and then uploads data into the specified URL. The program is written in Go. 
 
+## Table of Content
+- [eCatholic Coding Practical](#ecatholic-coding-practical)
+  * [Author](#author)
+  * [Introduction](#introduction)
+  * [Usage](#usage)
+  * [Upload requests](#upload-requests)
+  * [Tests](#tests)
+  * [Implementation](#implementation)
+  * [Possible improvements](#possible-improvements)
+  * [Acknowledgements](#acknowledgements)
+
 ## Author
 **Maciej Michalec** - polyglot developer (creator of [PolyDev.PL](https://polydev.pl)), with knowledge of Golang but without prior commercial experience in this language. 
 
@@ -100,6 +111,16 @@ You can run these tests by executing the following command in the root directory
 ```
 go test ./... -v 
 ``` 
+
+## Implementation
+When creating software, I primarily try to make the code as readable and maintainable as possible. 
+Thus is divided it into lots of small functions, s whose workings should be easy to understand. 
+
+I also modularized the application, moving the whole business logic into the separate package (`github.com/trivelt/payment-records-processor/paymentrecords`) and dividing
+it into multiple short files.
+
+Reading CSV files and sending JSON files was implemented using 
+an approach popular in the Go language that uses data structures with tags, used automatically during (un)marshaling.    
 
 ## Possible improvements
  * I am aware that the code coverage is not the best and having more time for completing this exercise I would certainly add more tests
